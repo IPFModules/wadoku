@@ -1,0 +1,7 @@
+- add sprockets for Tag
+- show the word ID in the ACP and front end
+- create a wadoku search
+- add this todo file in the module ACP
+- add example words in the DB
+- add the Romaji word for SEO in the URL
+- add a block with "Kanji of day" (Kanji as link, Hiragana, Romaji) 

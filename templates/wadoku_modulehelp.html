@@ -1,0 +1,12 @@
+<{includeq file='db:wadoku_header.html'}>
+<{if $wadoku_modulehelp}>
+<div id="wadoku-modulehelp-container">
+	<h1><{$wadoku_modulehelp.help_misc_field}></h1>
+
+</div>
+<{/if}>
+<{if $wadoku_modulehelp_table}>
+<h1><{$wadoku_title}></h1>
+<{$wadoku_modulehelp_table}>
+<{/if}>
+<{includeq file='db:wadoku_footer.html'}>

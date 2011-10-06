@@ -1,0 +1,20 @@
+
+'''Added'''
+* #000 (addons): QuickSearch for ACP and front end added (sato-san)
+* #000 (addons): table columns for Hiragana/Katakana and Romaji added (sato-san)
+
+
+=== wadoku 1.0 Beta ===
+Release date: 09/17/2011
+Revision: 00000
+
+'''Fixed'''
+* #000 (addons): text (username)
+
+'''Added'''
+* #000 (addons): text (username)
+
+'''Improved'''
+* #000 (addons): text (username)
+
+* First public release of the module (sato-san)
