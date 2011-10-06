@@ -2,6 +2,8 @@
 '''Added'''
 * #000 (addons): QuickSearch for ACP and front end added (sato-san)
 * #000 (addons): table columns for Hiragana/Katakana and Romaji added (sato-san)
+* #000 (addons): globle search function (Madfish + sato-san)
+* #000 (addons): new module icons (sato-san)
 
 
 === wadoku 1.0 Beta ===

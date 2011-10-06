@@ -24,9 +24,11 @@ function wadoku_search($queryarray, $andor, $limit, $offset, $userid)
 	foreach ($wadokusArray as $wadokuArray) {
 		$item['image'] = "images/icon_small.png";
 		$item['link'] = $wadokuArray['itemUrl'];
-		$item['title'] = $wadokuArray['title'];
-		$item['time'] = strtotime($wadokuArray['date']);
-		$item['uid'] = $wadokuArray['submitter'];
+		$item['title'] = $wadokuArray['midashi_go_field'] . ' | ' . $wadokuArray['hiragana_field'] . ' | ' . $wadokuArray['romaji_field'] . ' | ' . $wadokuArray['translation_field'];
+		if ($wadokuArray['word_date_field']) {
+			$item['time'] = strtotime($wadokuArray['word_date_field']);
+		}
+		$item['uid'] = $wadokuArray['userid_field'];
 		$ret[] = $item;
 		unset($item);
 	}

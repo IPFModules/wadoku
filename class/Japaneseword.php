@@ -28,14 +28,13 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		$this->quickInitVar("transkription_field", XOBJ_DTYPE_TXTBOX, FALSE);
 		$this->quickInitVar("translation_field", XOBJ_DTYPE_TXTAREA, TRUE);
 		$this->quickInitVar("entry_tags_field", XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar("daijirin_field", XOBJ_DTYPE_TXTAREA, FALSE);
-		$this->quickInitVar("daijisen_field", XOBJ_DTYPE_TXTAREA, FALSE);
+		//$this->quickInitVar("daijirin_field", XOBJ_DTYPE_TXTAREA, FALSE);
+		//$this->quickInitVar("daijisen_field", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->quickInitVar("userid_field", XOBJ_DTYPE_INT, FALSE);
 		$this->quickInitVar("word_date_field", XOBJ_DTYPE_LTIME, FALSE);
 		$this->quickInitVar("admin_extra_field", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->initCommonVar("counter");
 		$this->setControl("userid_field", "user");
-
 
 		$this->initiateSEO();
 	}
@@ -54,38 +53,4 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		}
 		return parent::getVar($key, $format);
 	}
-
-	/** Provides global search functionality for Wadoku module
-	*
-	*/
-	public function getJapanesewordsForSearch($queryarray, $andor, $limit, $offset, $userid) {
-		$criteria = new CriteriaCompo();
-		$criteria->setStart($offset);
-		$criteria->setLimit($limit);
-		$criteria->setSort('date');
-		$criteria->setOrder('DESC');
-
-		if ($userid != 0) {
-			$criteria->add(new Criteria('submitter', $userid));
-		}
-		if ($queryarray) {
-			$criteriaKeywords = new CriteriaCompo();
-			for ($i = 0; $i < count($queryarray); $i++) {
-				$criteriaKeyword = new CriteriaCompo();
-				$criteriaKeyword->add(new Criteria('title', '%' . $queryarray[$i] . '%',
-					'LIKE'), 'OR');
-				$criteriaKeyword->add(new Criteria('description', '%' . $queryarray[$i]
-					. '%', 'LIKE'), 'OR');
-				$criteriaKeywords->add($criteriaKeyword, $andor);
-				unset ($criteriaKeyword);
-			}
-			$criteria->add($criteriaKeywords);
-		}
-		$criteria->add(new Criteria('online_status', true));
-		return $this->getObjects($criteria, true, false);
-	}
-}
-
-class WadokuJapanesewordHandler extends IcmsPersistableObjectHandler {
-
 }
