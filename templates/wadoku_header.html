@@ -1,10 +1,1 @@
-<div class="wadoku_headertable">
-	<{if $wadoku_module_home}>
-	<span class="wadoku_modulename"><{$wadoku_module_home}></span>
-	<{/if}>
-	<{if $wadoku_category_path}>
-	<span class="wadoku_breadcrumb"><{if $wadoku_module_home}>&gt;<{/if}><{$wadoku_category_path}></span>
-	<{/if}>
-</div>
-
 <div id="wadoku_submit" style="clear: both;"><{if $wadoku_showSubmitLink && $wadoku_userCanSubmit}><a href="<{$wadoku_url}>post.php?op=mod"><{$smarty.const._MI_WADOKU_POST_ADD}></a><{/if}></div>
