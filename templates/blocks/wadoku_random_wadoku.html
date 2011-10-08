@@ -1,0 +1,8 @@
+<{if $block.description}>
+	<div><em>“<{$block.description}>”</em></div>
+	<{if $block.creator && $block.date}>
+		<div style="margin-top:1em;">- <{$block.creator}>, <{$block.date}></div>
+	<{elseif $block.creator}>
+		<div style="margin-top:1em;">- <{$block.creator}></div>
+	<{/if}>
+<{/if}>

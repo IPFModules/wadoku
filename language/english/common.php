@@ -35,6 +35,10 @@ define("_CO_WADOKU_JAPANESEWORD_WORD_DATE_FIELD", "Datum");
 define("_CO_WADOKU_JAPANESEWORD_WORD_DATE_FIELD_DSC", "Beschreibung zu Datum");
 define("_CO_WADOKU_JAPANESEWORD_ADMIN_EXTRA_FIELD", "ADMIN extra field");
 define("_CO_WADOKU_JAPANESEWORD_ADMIN_EXTRA_FIELD_DSC", "Beschreibung zu ADMIN extra field");
+define("_CO_WADOKU_JAPANESEWORD_ONLINE", "Online");
+define("_CO_WADOKU_JAPANESEWORD_OFFLINE", "Offline");
+define("_CO_WADOKU_JAPANESEWORD_ONLINE_STATUS", "Online?");
+define("_CO_WADOKU_JAPANESEWORD_JAPANESEWORD_ID", "ID");
 // modulehelp
 define("_CO_WADOKU_MODULEHELP_HELP_MISC_FIELD", "Help misc");
 define("_CO_WADOKU_MODULEHELP_HELP_MISC_FIELD_DSC", "Beschreibung zu Help misc (Help here)");

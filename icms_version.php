@@ -95,7 +95,14 @@ $modversion['templates'] = array(
 	array('file' => 'wadoku_footer.html', 'description' => 'Module Footer'));
 
 /** Blocks information */
-/** To come soon in imBuilding... */
+$modversion['blocks'][1] = array(
+	"file"						=> "wadoku_random_wadoku.php",
+	"name"						=> _MI_WADOKU_RANDOM_WADOKU,
+	"description"				=> _MI_WADOKU_RANDOM_WADOKUDSC,
+	"show_func"					=> "wadoku_random_wadoku_show",
+	"edit_func"					=> "wadoku_random_wadoku_edit",
+	"options"					=> "0",
+	"template"					=> "wadoku_random_wadoku.html");
 
 /** Preferences information */
 /** To come soon in imBuilding... */

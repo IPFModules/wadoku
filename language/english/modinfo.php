@@ -17,3 +17,7 @@ define("_MI_WADOKU_MD_DESC", "ImpressCMS Simple wadoku");
 
 define("_MI_WADOKU_JAPANESEWORDS", "Japanesewords");
 define("_MI_WADOKU_MODULEHELPS", "Modulehelps");
+
+// Blocks
+define("_MI_WADOKU_RANDOM_WADOKU", "Random words");
+define("_MI_WADOKU_RANDOM_WADOKUDSC", "Displays random words.");

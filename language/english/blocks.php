@@ -11,3 +11,5 @@
 */
 
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
+
+define("_MB_WADOKU_RANDOM_OR_FIXED_JAPANESEWORD", "Display random items (0) or a static item (enter japaneseword ID)");

@@ -22,6 +22,7 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		icms_ipf_object::__construct($handler);
 
 		$this->quickInitVar("japaneseword_id", XOBJ_DTYPE_INT, TRUE);
+		$this->quickInitVar("online_status", XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 1);
 		$this->quickInitVar("midashi_go_field", XOBJ_DTYPE_TXTBOX, TRUE);
 		$this->quickInitVar("hiragana_field", XOBJ_DTYPE_TXTBOX, TRUE);
 		$this->quickInitVar("romaji_field", XOBJ_DTYPE_TXTBOX, FALSE);
@@ -35,7 +36,8 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		$this->quickInitVar("admin_extra_field", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->initCommonVar("counter");
 		$this->setControl("userid_field", "user");
-
+		
+		$this->setControl('online_status', 'yesno');
 		$this->initiateSEO();
 	}
 
@@ -48,9 +50,34 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 	 * @return mixed value of the field that is requested
 	 */
 	public function getVar($key, $format = "s") {
-		if ($format == "s" && in_array($key, array())) {
+		if ($format == "s" && in_array($key, array('online_status'))) {
 			return call_user_func(array ($this,	$key));
 		}
 		return parent::getVar($key, $format);
+	}
+	
+	/**
+	* Converts the online status of an object to a human readable icon with link toggle
+	*
+	* @return string
+	*/
+	public function online_status() {
+	
+		$status = $button = '';
+	
+		$status = $this->getVar('online_status', 'e');
+		$button = '<a href="' . ICMS_URL . '/modules/' . basename(dirname(dirname(__FILE__)))
+		. '/admin/japaneseword.php?japaneseword_id=' . $this->getVar('japaneseword_id')
+		. '&amp;op=changeStatus">';
+		if (!$status) {
+			$button .= '<img src="'. ICMS_IMAGES_SET_URL . '/actions/button_cancel.png" alt="' . _CO_WADOKU_JAPANESEWORD_OFFLINE
+			. '" title="' . _CO_WADOKU_JAPANESEWORD_OFFLINE . '" /></a>';
+				
+		} else {
+				
+			$button .= '<img src="'. ICMS_IMAGES_SET_URL . '/actions/button_ok.png" alt="' . _CO_WADOKU_JAPANESEWORD_ONLINE
+			. '" title="' . _CO_WADOKU_JAPANESEWORD_ONLINE . '" /></a>';
+		}
+		return $button;
 	}
 }

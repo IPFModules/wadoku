@@ -52,4 +52,28 @@ class mod_wadoku_JapanesewordHandler extends icms_ipf_Handler {
 		}
 		return $this->getObjects($criteria, true, false);
 	}
+	
+	/**
+	* Toggles a japaneseword on or offline
+	*
+	* @param int $japaneseword_id
+	* @param str $field
+	* @return int $visibility
+	*/
+	public function changeOnlineStatus($japaneseword_id, $field) {
+	
+		$visibility = $japanesewordObj = '';
+	
+		$japanesewordObj = $this->get($japaneseword_id);
+		if ($japanesewordObj->getVar($field, 'e')) {
+			$japanesewordObj->setVar($field, 0);
+			$visibility = 0;
+		} else {
+			$japanesewordObj->setVar($field, 1);
+			$visibility = 1;
+		}
+		$this->insert($japanesewordObj, TRUE);
+	
+		return $visibility;
+	}
 }

@@ -43,7 +43,7 @@ $clean_op = "";
 /** Create a whitelist of valid values, be sure to use appropriate types for each value
  * Be sure to include a value for no parameter, if you have a default condition
  */
-$valid_op = array ("mod", "changedField", "addjapaneseword", "del", "view", "");
+$valid_op = array ("mod", "changedField", "addjapaneseword", "del", "view", "changeStatus", "");
 
 if (isset($_GET["op"])) $clean_op = htmlentities($_GET["op"]);
 if (isset($_POST["op"])) $clean_op = htmlentities($_POST["op"]);
@@ -80,11 +80,23 @@ if (in_array($clean_op, $valid_op, TRUE)) {
 			icms_cp_header();
 			$japanesewordObj->displaySingleObject();
 			break;
-
+			
+		case "changeStatus":
+			$status = $ret = '';
+			$status = $wadoku_japaneseword_handler->changeOnlineStatus($clean_japaneseword_id, 'online_status');
+			$ret = '/modules/' . basename(dirname(dirname(__FILE__))) . '/admin/japaneseword.php';
+			if (!$status) {
+				redirect_header(ICMS_URL . $ret, 2, _AM_WADOKU_JAPANESEWORD_OFFLINE);
+			} else {
+				redirect_header(ICMS_URL . $ret, 2, _AM_WADOKU_JAPANESEWORD_ONLINE);
+			}
+			break;
+					
 		default:
 			icms_cp_header();
 			$icmsModule->displayAdminMenu(0, _AM_WADOKU_JAPANESEWORDS);
 			$objectTable = new icms_ipf_view_Table($wadoku_japaneseword_handler);
+			$objectTable->addColumn(new icms_ipf_view_Column("online_status", "center", TRUE));
 			$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field"));
 			$objectTable->addColumn(new icms_ipf_view_Column("hiragana_field"));
 			$objectTable->addColumn(new icms_ipf_view_Column("romaji_field"));

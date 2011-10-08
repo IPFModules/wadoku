@@ -29,7 +29,10 @@ define("_AM_WADOKU_JAPANESEWORD_EDIT_INFO", "Fill-out the following form in orde
 define("_AM_WADOKU_JAPANESEWORD_MODIFIED", "The japaneseword was successfully modified.");
 define("_AM_WADOKU_JAPANESEWORD_CREATED", "The japaneseword has been successfully created.");
 define("_AM_WADOKU_JAPANESEWORD_VIEW", "Japaneseword info");
-define("_AM_WADOKU_JAPANESEWORD_VIEW_DSC", "Here is the info about this japaneseword.");// Modulehelp
+define("_AM_WADOKU_JAPANESEWORD_VIEW_DSC", "Here is the info about this japaneseword.");
+define("_AM_WADOKU_JAPANESEWORD_ONLINE", "Das Wort ist jetzt Online");
+define("_AM_WADOKU_JAPANESEWORD_OFFLINE", "Das Wort ist jetzt Offline");
+// Modulehelp
 define("_AM_WADOKU_MODULEHELPS", "Modulehelps");
 define("_AM_WADOKU_MODULEHELPS_DSC", "All modulehelps in the module");
 define("_AM_WADOKU_MODULEHELP_CREATE", "Add a modulehelp");
