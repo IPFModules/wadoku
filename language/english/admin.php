@@ -19,9 +19,9 @@ define("_AM_WADOKU_REQUIREMENTS_ICMS_BUILD", "wadoku requires at least ImpressCM
 define("_AM_WADOKU_REQUIREMENTS_SUPPORT", "Should you have any question or concerns, please visit our forums at <a href='http://community.impresscms.org'>http://community.impresscms.org</a>.");
 
 // Japaneseword
-define("_AM_WADOKU_JAPANESEWORDS", "Japanesewords");
+define("_AM_WADOKU_JAPANESEWORDS", "WaDoku");
 define("_AM_WADOKU_JAPANESEWORDS_DSC", "All japanesewords in the module");
-define("_AM_WADOKU_JAPANESEWORD_CREATE", "Add a japaneseword");
+define("_AM_WADOKU_JAPANESEWORD_CREATE", "Create a new word");
 define("_AM_WADOKU_JAPANESEWORD", "Japaneseword");
 define("_AM_WADOKU_JAPANESEWORD_CREATE_INFO", "Fill-out the following form to create a new japaneseword.");
 define("_AM_WADOKU_JAPANESEWORD_EDIT", "Edit this japaneseword");
@@ -33,7 +33,7 @@ define("_AM_WADOKU_JAPANESEWORD_VIEW_DSC", "Here is the info about this japanese
 define("_AM_WADOKU_JAPANESEWORD_ONLINE", "Das Wort ist jetzt Online");
 define("_AM_WADOKU_JAPANESEWORD_OFFLINE", "Das Wort ist jetzt Offline");
 // Modulehelp
-define("_AM_WADOKU_MODULEHELPS", "Modulehelps");
+define("_AM_WADOKU_MODULEHELPS", "Help");
 define("_AM_WADOKU_MODULEHELPS_DSC", "All modulehelps in the module");
 define("_AM_WADOKU_MODULEHELP_CREATE", "Add a modulehelp");
 define("_AM_WADOKU_MODULEHELP", "Modulehelp");

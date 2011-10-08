@@ -62,21 +62,16 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 	* @return string
 	*/
 	public function online_status() {
-	
 		$status = $button = '';
 	
 		$status = $this->getVar('online_status', 'e');
-		$button = '<a href="' . ICMS_URL . '/modules/' . basename(dirname(dirname(__FILE__)))
-		. '/admin/japaneseword.php?japaneseword_id=' . $this->getVar('japaneseword_id')
-		. '&amp;op=changeStatus">';
+		$button = '<a href="' . ICMS_URL . '/modules/' . basename(dirname(dirname(__FILE__))) . '/admin/japaneseword.php?japaneseword_id=' . $this->getVar('japaneseword_id') . '&amp;op=changeStatus">';
 		if (!$status) {
-			$button .= '<img src="'. ICMS_IMAGES_SET_URL . '/actions/button_cancel.png" alt="' . _CO_WADOKU_JAPANESEWORD_OFFLINE
-			. '" title="' . _CO_WADOKU_JAPANESEWORD_OFFLINE . '" /></a>';
+			$button .= '<img src="'. ICMS_IMAGES_SET_URL . '/actions/button_cancel.png" alt="' . _CO_WADOKU_JAPANESEWORD_OFFLINE . '" title="' . _CO_WADOKU_JAPANESEWORD_OFFLINE . '" /></a>';
 				
 		} else {
 				
-			$button .= '<img src="'. ICMS_IMAGES_SET_URL . '/actions/button_ok.png" alt="' . _CO_WADOKU_JAPANESEWORD_ONLINE
-			. '" title="' . _CO_WADOKU_JAPANESEWORD_ONLINE . '" /></a>';
+			$button .= '<img src="'. ICMS_IMAGES_SET_URL . '/actions/button_ok.png" alt="' . _CO_WADOKU_JAPANESEWORD_ONLINE	. '" title="' . _CO_WADOKU_JAPANESEWORD_ONLINE . '" /></a>';
 		}
 		return $button;
 	}

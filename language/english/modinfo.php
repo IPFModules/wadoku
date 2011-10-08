@@ -15,8 +15,8 @@ defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 define("_MI_WADOKU_MD_NAME", "wadoku");
 define("_MI_WADOKU_MD_DESC", "ImpressCMS Simple wadoku");
 
-define("_MI_WADOKU_JAPANESEWORDS", "Japanesewords");
-define("_MI_WADOKU_MODULEHELPS", "Modulehelps");
+define("_MI_WADOKU_JAPANESEWORDS", "WaDoku");
+define("_MI_WADOKU_MODULEHELPS", "Help");
 
 // Blocks
 define("_MI_WADOKU_RANDOM_WADOKU", "Random words");
