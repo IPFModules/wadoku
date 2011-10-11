@@ -10,6 +10,8 @@
  * @version		$Id$
  */
 
+global $icmsConfig;
+
 $adminmenu[] = array(
 	"title" => _MI_WADOKU_JAPANESEWORDS,
 	"link" => "admin/japaneseword.php");
@@ -29,6 +31,9 @@ $headermenu[] = array(
 $headermenu[] = array(
 	"title" => _CO_ICMS_UPDATE_MODULE,
 	"link" => ICMS_URL . "/modules/system/admin.php?fct=modulesadmin&amp;op=update&amp;module=" . basename(dirname(dirname(__FILE__))));
+$headermenu[] = array(
+	"title" => _MI_WADOKU_TEMPLATES,
+	"link" => '../../system/admin.php?fct=tplsets&amp;op=listtpl&amp;tplset=' . $icmsConfig['template_set'] . '&amp;moddir=' . basename(dirname(dirname(__FILE__))));
 $headermenu[] = array(
 	"title" => _MODABOUT_ABOUT,
 	"link" => ICMS_URL . "/modules/wadoku/admin/about.php");

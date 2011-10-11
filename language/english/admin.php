@@ -24,7 +24,7 @@ define("_AM_WADOKU_JAPANESEWORDS_DSC", "All japanesewords in the module");
 define("_AM_WADOKU_JAPANESEWORD_CREATE", "Create a new word");
 define("_AM_WADOKU_JAPANESEWORD", "Japaneseword");
 define("_AM_WADOKU_JAPANESEWORD_CREATE_INFO", "Fill-out the following form to create a new japaneseword.");
-define("_AM_WADOKU_JAPANESEWORD_EDIT", "Edit this japaneseword");
+define("_AM_WADOKU_JAPANESEWORD_EDIT", "Edit this word");
 define("_AM_WADOKU_JAPANESEWORD_EDIT_INFO", "Fill-out the following form in order to edit this japaneseword.");
 define("_AM_WADOKU_JAPANESEWORD_MODIFIED", "The japaneseword was successfully modified.");
 define("_AM_WADOKU_JAPANESEWORD_CREATED", "The japaneseword has been successfully created.");

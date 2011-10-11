@@ -1,8 +1,3 @@
-<{if $block.description}>
-	<div><em>“<{$block.description}>”</em></div>
-	<{if $block.creator && $block.date}>
-		<div style="margin-top:1em;">- <{$block.creator}>, <{$block.date}></div>
-	<{elseif $block.creator}>
-		<div style="margin-top:1em;">- <{$block.creator}></div>
-	<{/if}>
-<{/if}>
+<div style="font-size:150%;font-weight: bold;"><{$block.midashi_go_field}></div>
+<div style="font-size:80%;font-weight: normal;">( <{$block.hiragana_field}> )</div>
+<div><em>“<{$block.translation_field}>”</em></div>
