@@ -24,7 +24,7 @@ $japanesewordObj = $wadoku_japaneseword_handler->get($clean_japaneseword_id);
 if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$icmsTpl->assign("wadoku_japaneseword", $japanesewordObj->toArray());
 
-	$icms_metagen = new icms_ipf_Metagen($japanesewordObj->getVar("meta_keywords"), $japanesewordObj->getVar("translation_field", "n"), $japanesewordObj->getVar("meta_description", "n"));
+	$icms_metagen = new icms_ipf_Metagen($japanesewordObj->getVar("meta_keywords"), $japanesewordObj->getVar("meta_description", "n"), $japanesewordObj->getVar("translation_field", "n"));
 	$icms_metagen->createMetaTags();
 } else {
 	$icmsTpl->assign("wadoku_title", _MD_WADOKU_ALL_JAPANESEWORDS);
@@ -33,7 +33,7 @@ if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$objectTable->isForUserSide();
 	$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field"));
 	$objectTable->addColumn(new icms_ipf_view_Column("hiragana_field"));
-	$objectTable->addColumn(new icms_ipf_view_Column("romaji_field"));
+	$objectTable->addColumn(new icms_ipf_view_Column("translation_field"));
 	$objectTable->addQuickSearch(array('midashi_go_field', 'hiragana_field', 'romaji_field', 'translation_field'));
 	$icmsTpl->assign("wadoku_japaneseword_table", $objectTable->fetch());
 }

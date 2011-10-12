@@ -1,18 +1,40 @@
 <{includeq file='db:wadoku_header.html'}>
 <{if $wadoku_japaneseword}>
 <div id="wadoku-japaneseword-container">
-	<h1><{$wadoku_japaneseword.midashi_go_field}></h1>
-		<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_HIRAGANA_FIELD}></b>: <{$wadoku_japaneseword.hiragana_field}></div>
-		<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_ROMAJI_FIELD}></b>: <{$wadoku_japaneseword.romaji_field}></div>
-		<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_TRANSKRIPTION_FIELD}></b>: <{$wadoku_japaneseword.transkription_field}></div>
-		<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_TRANSLATION_FIELD}></b>: <{$wadoku_japaneseword.translation_field}></div>
-		<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_ENTRY_TAGS_FIELD}></b>: <{$wadoku_japaneseword.entry_tags_field}></div>
-		<{if $isAdmin}>
-		<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_USERID_FIELD}></b>: <{$wadoku_japaneseword.userid_field}></div>
-		<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_WORD_DATE_FIELD}></b>: <{$wadoku_japaneseword.word_date_field}></div> <div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_ADMIN_EXTRA_FIELD}></b></div>
-		<div><{$wadoku_japaneseword.admin_extra_field}></div>
-		<{/if}>
+	<div style="border-bottom: 1px solid #CCCCCC;">
+		<div style="display: inline-block;font-size: x-large;vertical-align: super;">
+			<span class="midashigo">【<span class="orth" lang="ja" xml:lang="ja"><{$wadoku_japaneseword.midashi_go_field}></span> 】</span>
+		</div>
+		<div style="display: inline-block;text-align: center;">
+			<div style="font-size: small;height: 1.4em;" lang="ja" xml:lang="ja"><{$wadoku_japaneseword.hiragana_field}>
+			</div>
+			<div style="color: gray;" lang="ja" xml:lang="ja"><{$wadoku_japaneseword.romaji_field}>
+			</div>
+		</div>
+	<div style="font-size: small;margin-bottom: 8px;margin-left: 10px;margin-top: 5px;">
+		<div style="color: gray;font-family: Verdana,sans-serif;font-size: x-small;margin-top: 2px;"><{$wadoku_japaneseword.transkription_field}>
+		</div>
+		<div style="margin-top: 2px;"><{$wadoku_japaneseword.translation_field}>
+		</div>
+	</div>
+		
+	</div>
 </div>
+
+
+
+
+
+
+				<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_ENTRY_TAGS_FIELD}></b>: <{$wadoku_japaneseword.entry_tags_field}></div>
+				<{if $wadoku_is_admin}><p>ADMIN INFO</p>
+				<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_JAPANESEWORD_ID}></b>: <{$wadoku_japaneseword.japaneseword_id}></div>
+				<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_USERID_FIELD}></b>: <{$wadoku_japaneseword.userid_field}></div>
+				<div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_WORD_DATE_FIELD}></b>: <{$wadoku_japaneseword.word_date_field}></div> <div><b><{$smarty.const._CO_WADOKU_JAPANESEWORD_ADMIN_EXTRA_FIELD}></b></div>
+				<div><{$wadoku_japaneseword.admin_extra_field}></div>
+				<{/if}>
+	
+
 <{/if}>
 <{if $wadoku_japaneseword_table}>
 <h1><{$wadoku_title}></h1>

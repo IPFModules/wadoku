@@ -12,6 +12,8 @@ Revision: 00000
 * #000 (addons): a new block to show a word randomly (sato-san)
 * #000 (addons): set a word online/offline in the ACP (sato-san)
 * #000 (addons): link for templates in the ACP added (sato-san)
+* #000 (addons): extended admin infos for the front end added (sato-san)
+* #000 (addons): META keywords and META description added (sato-san)
 
 === wadoku 1.0 Beta ===
 Release date: 09/17/2011

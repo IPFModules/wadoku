@@ -19,7 +19,7 @@ class mod_wadoku_JapanesewordHandler extends icms_ipf_Handler {
 	 * @param icms_db_legacy_Database $db database connection object
 	 */
 	public function __construct(&$db) {
-		parent::__construct($db, "japaneseword", "japaneseword_id", "midashi_go_field", "midashi_go_field", "wadoku");
+		parent::__construct($db, "japaneseword", "japaneseword_id", "midashi_go_field", "romaji_field", "wadoku");
 
 	}
 	
