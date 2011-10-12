@@ -24,7 +24,7 @@ $japanesewordObj = $wadoku_japaneseword_handler->get($clean_japaneseword_id);
 if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$icmsTpl->assign("wadoku_japaneseword", $japanesewordObj->toArray());
 
-	$icms_metagen = new icms_ipf_Metagen($japanesewordObj->getVar("midashi_go_field"), $japanesewordObj->getVar("meta_keywords", "n"), $japanesewordObj->getVar("meta_description", "n"));
+	$icms_metagen = new icms_ipf_Metagen($japanesewordObj->getVar("meta_keywords"), $japanesewordObj->getVar("translation_field", "n"), $japanesewordObj->getVar("meta_description", "n"));
 	$icms_metagen->createMetaTags();
 } else {
 	$icmsTpl->assign("wadoku_title", _MD_WADOKU_ALL_JAPANESEWORDS);
