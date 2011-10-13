@@ -104,7 +104,9 @@ if (in_array($clean_op, $valid_op, TRUE)) {
 			//$objectTable->addColumn(new icms_ipf_view_Column("translation_field"));
 			$objectTable->addColumn(new icms_ipf_view_Column("counter", "center"));
 			$objectTable->addIntroButton("addjapaneseword", "japaneseword.php?op=mod", _AM_WADOKU_JAPANESEWORD_CREATE);
-			$objectTable->addQuickSearch(array('midashi_go_field', 'hiragana_field', 'romaji_field'));
+			$objectTable->addQuickSearch(array('midashi_go_field', 'hiragana_field', 'romaji_field', 'translation_field', 'entry_tags_field'));
+			$objectTable->setDefaultSort('japaneseword_id');
+			$objectTable->setDefaultOrder('DESC');
 			$icmsAdminTpl->assign("wadoku_japaneseword_table", $objectTable->fetch());
 			$icmsAdminTpl->display("db:wadoku_admin_japaneseword.html");
 			break;

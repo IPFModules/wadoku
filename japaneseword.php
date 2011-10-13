@@ -31,10 +31,14 @@ if($japanesewordObj && !$japanesewordObj->isNew()) {
 
 	$objectTable = new icms_ipf_view_Table($wadoku_japaneseword_handler, FALSE, array());
 	$objectTable->isForUserSide();
-	$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field"));
-	$objectTable->addColumn(new icms_ipf_view_Column("hiragana_field"));
+	$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field", "center", "80"));
+	$objectTable->addColumn(new icms_ipf_view_Column("hiragana_field", "center", "80"));
 	$objectTable->addColumn(new icms_ipf_view_Column("translation_field"));
-	$objectTable->addQuickSearch(array('midashi_go_field', 'hiragana_field', 'romaji_field', 'translation_field'));
+	$objectTable->addColumn(new icms_ipf_view_Column("entry_tags_field", _GLOBAL_LEFT, "80"));
+	$objectTable->addColumn(new icms_ipf_view_Column("japaneseword_id", "center", "30"));
+	$objectTable->addQuickSearch(array('midashi_go_field', 'hiragana_field', 'romaji_field', 'translation_field', 'entry_tags_field'));
+	$objectTable->setDefaultSort('japaneseword_id');
+	$objectTable->setDefaultOrder('DESC');
 	$icmsTpl->assign("wadoku_japaneseword_table", $objectTable->fetch());
 }
 

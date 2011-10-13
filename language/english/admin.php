@@ -20,7 +20,7 @@ define("_AM_WADOKU_REQUIREMENTS_SUPPORT", "Should you have any question or conce
 
 // Japaneseword
 define("_AM_WADOKU_JAPANESEWORDS", "WaDoku");
-define("_AM_WADOKU_JAPANESEWORDS_DSC", "All japanesewords in the module");
+define("_AM_WADOKU_JAPANESEWORDS_DSC", "All Japanese words");
 define("_AM_WADOKU_JAPANESEWORD_CREATE", "Create a new word");
 define("_AM_WADOKU_JAPANESEWORD", "Japaneseword");
 define("_AM_WADOKU_JAPANESEWORD_CREATE_INFO", "Fill-out the following form to create a new japaneseword.");
