@@ -59,27 +59,6 @@ $clean_modulehelp_id = isset($_GET["modulehelp_id"]) ? (int)$_GET["modulehelp_id
 */
 if (in_array($clean_op, $valid_op, TRUE)) {
 	switch ($clean_op) {
-		case "mod":
-		case "changedField":
-			icms_cp_header();
-			editmodulehelp($clean_modulehelp_id);
-			break;
-
-		case "addmodulehelp":
-			$controller = new icms_ipf_Controller($wadoku_modulehelp_handler);
-			$controller->storeFromDefaultForm(_AM_WADOKU_MODULEHELP_CREATED, _AM_WADOKU_MODULEHELP_MODIFIED);
-			break;
-
-		case "del":
-			$controller = new icms_ipf_Controller($wadoku_modulehelp_handler);
-			$controller->handleObjectDeletion();
-			break;
-
-		case "view" :
-			$modulehelpObj = $wadoku_modulehelp_handler->get($clean_modulehelp_id);
-			icms_cp_header();
-			$modulehelpObj->displaySingleObject();
-			break;
 
 		default:
 			icms_cp_header();

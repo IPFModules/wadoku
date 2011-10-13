@@ -13,12 +13,12 @@
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 
 // japaneseword
-define("_CO_WADOKU_JAPANESEWORD_MIDASHI_GO_FIELD", "Kanji oder Katakana");
-define("_CO_WADOKU_JAPANESEWORD_MIDASHI_GO_FIELD_DSC", "Beschreibung zu Kanji oder Katakana");
+define("_CO_WADOKU_JAPANESEWORD_MIDASHI_GO_FIELD", "Japanese");
+define("_CO_WADOKU_JAPANESEWORD_MIDASHI_GO_FIELD_DSC", "Write the Kanji or Katakana from the Japanese word");
 define("_CO_WADOKU_JAPANESEWORD_HIRAGANA_FIELD", "Reading");
-define("_CO_WADOKU_JAPANESEWORD_HIRAGANA_FIELD_DSC", "Beschreibung zu Hiragana / Katakana");
+define("_CO_WADOKU_JAPANESEWORD_HIRAGANA_FIELD_DSC", "Write the Hiragana word");
 define("_CO_WADOKU_JAPANESEWORD_ROMAJI_FIELD", "Romaji");
-define("_CO_WADOKU_JAPANESEWORD_ROMAJI_FIELD_DSC", "Beschreibung zu romaji");
+define("_CO_WADOKU_JAPANESEWORD_ROMAJI_FIELD_DSC", "Take latin letters and write the word in Romaji");
 define("_CO_WADOKU_JAPANESEWORD_TRANSKRIPTION_FIELD", "Transkription");
 define("_CO_WADOKU_JAPANESEWORD_TRANSKRIPTION_FIELD_DSC", "Beschreibung zu Transkription");
 define("_CO_WADOKU_JAPANESEWORD_TRANSLATION_FIELD", "Translation");

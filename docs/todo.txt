@@ -1,4 +1,0 @@
-- add help and tips in the module ACP
-- add sprockets for Tag
-- add this todo file in the module ACP
-- add the Romaji word for SEO in the URL
