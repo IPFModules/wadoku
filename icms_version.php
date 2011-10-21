@@ -66,11 +66,11 @@ $modversion = array(
 /** Comments information */
 	"hasComments"				=> 1,
 	"comments"					=> array(
-									"itemName" => "post_id",
-									"pageName" => "post.php",
+									"itemName" => "japaneseword_id",
+									"pageName" => "japaneseword.php",
 									"callbackFile" => "include/comment.inc.php",
 									"callback" => array("approve" => "wadoku_com_approve",
-														"update" => "wadoku_com_update")));
+									"update" => "wadoku_com_update")));
 
 /** other possible types: testers, translators, documenters and other */
 $modversion['people']['developers'][] = "[url=http://www.impresscms.de/]佐藤レネー René Sato[/url]";

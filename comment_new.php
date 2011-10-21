@@ -15,15 +15,15 @@
 include_once "header.php";
 $com_itemid = isset($_GET["com_itemid"]) ? (int)$_GET["com_itemid"] : 0;
 if ($com_itemid > 0) {
-	$wadoku_post_handler = icms_getModuleHandler("post", basename(dirname(__FILE__)), "wadoku");
-	$postObj = $wadoku_post_handler->get($com_itemid);
-	if ($postObj && !$postObj->isNew()) {
-		$com_replytext = "test...";
-		$bodytext = $postObj->getPostLead();
-		if ($bodytext != "") {
-			$com_replytext .= "<br /><br />".$bodytext;
+	$wadoku_japaneseword_handler = icms_getModuleHandler("japaneseword", basename(dirname(__FILE__)), "wadoku");
+	$japanesewordObj = $wadoku_japaneseword_handler->get($com_itemid);
+	
+	if ($japanesewordObj && !$japanesewordObj->isNew()) {
+		$bodytext = $japanesewordObj->getVar('midashi_go_field');
+		if ($bodytext != '') {
+			$com_replytext .= $bodytext;
 		}
-		$com_replytitle = $postObj->getVar("post_title");
-		include_once ICMS_ROOT_PATH . "/include/comment_new.php";
+		$com_replytitle = $japanesewordObj->getVar('japaneseword_id');
+		include_once ICMS_ROOT_PATH .'/include/comment_new.php';
 	}
 }

@@ -12,9 +12,9 @@
  * @version		$Id$
  */
 
-function wadoku_com_update($item_id, $total_num) {
-    $wadoku_post_handler = icms_getModuleHandler("post", basename(dirname(dirname(__FILE__))), "wadoku");
-    $wadoku_post_handler->updateComments($item_id, $total_num);
+function wadoku_com_update($japaneseword_id, $total_num) {
+    $wadoku_japaneseword_handler = icms_getModuleHandler("japaneseword", basename(dirname(dirname(__FILE__))), "wadoku");
+    $wadoku_japaneseword_handler->updateComments($japaneseword_id, $total_num);
 }
 
 function wadoku_com_approve(&$comment) {

@@ -75,4 +75,42 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		}
 		return $button;
 	}
+	
+	/**
+	* Switches an items status from online to offline or vice versa
+	*
+	* @return null
+	*/
+	public function changeVisible($japaneseword_id) {
+	$visibility = '';
+	$japanesewordObj = $this->get($japaneseword_id);
+	if ($japanesewordObj->getVar('online_status', 'e') == true) {
+	$japanesewordObj->setVar('online_status', 0);
+				$visibility = 0;
+	} else {
+	$japanesewordObj->setVar('online_status', 1);
+				$visibility = 1;
+	}
+	$this->insert($japanesewordObj, true);
+	return $visibility;
+	
+	}
+	
+	/**
+	* Converts status value to human readable text
+	*
+	* @return array
+	*/
+	public function online_status_filter() {
+	return array(0 => 'Offline', 1 => 'Online');
+	}
+	
+	public function updateComments($japaneseword_id, $total_num) {
+	$japanesewordObj = $this->get($japaneseword_id);
+	if ($japanesewordObj && !$japanesewordObj->isNew()) {
+	$japanesewordObj->setVar('japaneseword_comments', $total_num);
+	$this->insert($japanesewordObj, true);
+			}
+		}
+	
 }
