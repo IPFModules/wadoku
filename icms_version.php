@@ -115,25 +115,25 @@ $modversion['notification']['lookup_func'] = 'wadoku_notify_iteminfo';
 
 $modversion['notification']['category'][] = array (
 	'name'				=> 'global',
-	'title'				=> _MI_ALBUM_GLOBAL_NOTIFY,
-	'description'		=> _MI_ALBUM_GLOBAL_NOTIFY_DSC,
+	'title'				=> _MI_WADOKU_GLOBAL_NOTIFY,
+	'description'		=> _MI_WADOKU_GLOBAL_NOTIFY_DSC,
 	'subscribe_from'	=> array('japaneseword.php')
 );
 $modversion['notification']['event'][] = array(
 	'name'				=> 'new_vocabulary',
 	'category'			=> 'global',
-	'title'				=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY,
-	'caption'			=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY_CAP,
-	'description'		=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY_DSC,
+	'title'				=> _MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY,
+	'caption'			=> _MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_CAP,
+	'description'		=> _MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_DSC,
 	'mail_template'		=> 'new_vocabulary',  //create a mail template
-	'mail_subject'		=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY_SBJ
+	'mail_subject'		=> _MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_SBJ
 );
 $modversion['notification']['event'][] = array(
 	'name'				=> 'vocabulary_modified',
 	'category'			=> 'global',
-	'title'				=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY,
-	'caption'			=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY_CAP,
-	'description'		=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY_DSC,
+	'title'				=> _MI_WADOKU_GLOBAL_VOC_NOTIFY,
+	'caption'			=> _MI_WADOKU_GLOBAL_VOC_NOTIFY_CAP,
+	'description'		=> _MI_WADOKU_GLOBAL_VOC_NOTIFY_DSC,
 	'mail_template'		=> 'vocabulary_modified',  //create a mail template
-	'mail_subject'		=> _MI_ALBUM_GLOBAL_ALBUM_PUBLISHED_NOTIFY_SBJ
+	'mail_subject'		=> _MI_WADOKU_GLOBAL_VOC_NOTIFY_SBJ
 );
