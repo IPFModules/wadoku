@@ -39,6 +39,10 @@ define("_CO_WADOKU_JAPANESEWORD_ONLINE", "Online");
 define("_CO_WADOKU_JAPANESEWORD_OFFLINE", "Offline");
 define("_CO_WADOKU_JAPANESEWORD_ONLINE_STATUS", "Online?");
 define("_CO_WADOKU_JAPANESEWORD_JAPANESEWORD_ID", "ID");
+define("_CO_WADOKU_JAPANESEWORD_COUNTER", "Hits");
 // modulehelp
 define("_CO_WADOKU_MODULEHELP_HELP_MISC_FIELD", "Help misc");
 define("_CO_WADOKU_MODULEHELP_HELP_MISC_FIELD_DSC", "Beschreibung zu Help misc (Help here)");
+// preview
+define("_CO_WADOKU_PREVIEW", "Show the detailpage in the front end");
+define("_CO_JAPANESEWORD_VIEW", "Preview in the module administration");

@@ -38,10 +38,14 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		$this->quickInitVar("userid_field", XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 1);
 		$this->quickInitVar("word_date_field", XOBJ_DTYPE_LTIME, FALSE);
 		$this->quickInitVar("admin_extra_field", XOBJ_DTYPE_TXTAREA, FALSE);
-		$this->quickInitVar("notification_sent", XOBJ_DTYPE_INT, FALSE); 
+		
+		//notifications
+		$this->quickInitVar("notification_sent", XOBJ_DTYPE_INT, FALSE);
+		
 		$this->initCommonVar("counter");
 		$this->setControl("userid_field", "user");
 		
+		//notifications
 		$this->hideFieldFromForm("notification_sent");
 		
 		$this->setControl('online_status', 'yesno');
@@ -124,7 +128,7 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		$tags ['WADOKU_URL'] = $this->getItemLink(false);
 		icms::handler('icms_data_notification')->triggerEvent('global', 0, 'new_vocabulary', $tags, array(), $module->getVar('mid'));
 	}
-	
+	//notifications
 	function sendNotifVocabularyUpdated() {
 		$module = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
 		$tags ['WADOKU_TITLE'] = $this->getVar('midashi_go_field');

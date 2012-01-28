@@ -24,13 +24,13 @@ define("_MI_WADOKU_RANDOM_WADOKU", "Random words");
 define("_MI_WADOKU_RANDOM_WADOKUDSC", "Displays random WaDoku words.");
 
 // Notification
-define("_MI_WADOKU_GLOBAL_NOTIFY", "_MI_WADOKU_GLOBAL_NOTIFY");
-define("_MI_WADOKU_GLOBAL_NOTIFY_DSC", "_MI_WADOKU_GLOBAL_NOTIFY_DSC");
-define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY", "_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY");
-define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_CAP", "_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_CAP");
-define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_DSC", "_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_DSC");
-define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_SBJ", "_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_SBJ");
-define("_MI_WADOKU_GLOBAL_VOC_NOTIFY", "_MI_WADOKU_GLOBAL_VOC_NOTIFY");
-define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_CAP", "_MI_WADOKU_GLOBAL_VOC_NOTIFY_CAP");
-define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_DSC", "_MI_WADOKU_GLOBAL_VOC_NOTIFY_DSC");
-define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_SBJ", "_MI_WADOKU_GLOBAL_VOC_NOTIFY_SBJ");
+define("_MI_WADOKU_GLOBAL_NOTIFY", "Global");
+define("_MI_WADOKU_GLOBAL_NOTIFY_DSC", "Global word notification options.");
+define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY", "New word created");
+define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_CAP", "Notify me when a new word is created.");
+define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_DSC", "Receive notification when any new word is created.");
+define("_MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_SBJ", "[{X_SITENAME}] {X_MODULE} auto-notify : New Japanese word is created");
+define("_MI_WADOKU_GLOBAL_VOC_NOTIFY", "Word modifications");
+define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_CAP", "Notify me of any word modifications.");
+define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_DSC", "Receive notification when any word modification is submitted.");
+define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_SBJ", "[{X_SITENAME}] {X_MODULE} auto-notify : A new Japanese word was modified");

@@ -34,8 +34,8 @@ $modversion = array(
 
 /**  Development information */
 	"status_version"			=> "1.0",
-	"status"					=> "Beta2",
-	"date"						=> "Unreleased",
+	"status"					=> "RC",
+	"date"						=> "28.01.2012",
 	"author_word"				=> "",
 	"warning"					=> _CO_ICMS_WARNING_BETA,
 

@@ -1,3 +1,19 @@
+=== wadoku 1.0 RC ===
+Release date: 28/01/2012
+Revision: 23299
+
+'''Added'''
+* #000 (addons): Notification with two options added (sato-san)
+* #000 (addons): comment function added (sato-san)
+
+'''Fixed'''
+* #000 (addons): link from the module ACP to the front end fixed (sato-san)
+* #000 (addons): preview within the module administration fixed (sato-san)
+* #000 (addons): view-counter fixed (sato-san)
+* #000 (addons): Filter in the module administration fixed (sato-san)
+* #000 (addons): Status for Offline and Online fixed (sato-san)
+
+
 === wadoku 1.0 Beta2 ===
 Release date: 00/00/2011
 Revision: 00000
