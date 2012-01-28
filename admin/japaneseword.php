@@ -98,7 +98,10 @@ if (in_array($clean_op, $valid_op, TRUE)) {
 			$objectTable = new icms_ipf_view_Table($wadoku_japaneseword_handler);
 			$objectTable->addColumn(new icms_ipf_view_Column("online_status", "center", TRUE));
 			$objectTable->addColumn(new icms_ipf_view_Column("japaneseword_id", "center"));
-			$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field"));
+			
+			//Feld als preview defieren
+			$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field", FALSE, FALSE, 'getPreviewItemLink'));
+			
 			$objectTable->addColumn(new icms_ipf_view_Column("hiragana_field"));
 			$objectTable->addColumn(new icms_ipf_view_Column("romaji_field"));
 			//$objectTable->addColumn(new icms_ipf_view_Column("translation_field"));
@@ -108,6 +111,10 @@ if (in_array($clean_op, $valid_op, TRUE)) {
 			$objectTable->setDefaultSort('japaneseword_id');
 			$objectTable->setDefaultOrder('DESC');
 			$objectTable->addFilter('online_status', 'online_status_filter');
+			
+			//detailpage ACP
+			$objectTable->addCustomAction( 'getViewItemLink' );
+			
 			$icmsAdminTpl->assign("wadoku_japaneseword_table", $objectTable->fetch());
 			$icmsAdminTpl->display("db:wadoku_admin_japaneseword.html");
 			break;

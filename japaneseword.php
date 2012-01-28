@@ -38,7 +38,10 @@ if($japanesewordObj && !$japanesewordObj->isNew()) {
 
 	$objectTable = new icms_ipf_view_Table($wadoku_japaneseword_handler, FALSE, array());
 	$objectTable->isForUserSide();
-	$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field", "center", "80"));
+	
+	//Feld als preview defieren
+	$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field", "center", "80", 'getItemLink'));
+	
 	$objectTable->addColumn(new icms_ipf_view_Column("hiragana_field", "center", "80"));
 	$objectTable->addColumn(new icms_ipf_view_Column("translation_field"));
 	$objectTable->addColumn(new icms_ipf_view_Column("entry_tags_field", _GLOBAL_LEFT, "80"));

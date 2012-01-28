@@ -94,4 +94,23 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		}
 		$this->setVar('counter', $t);
 	}
+	
+	//detailpage ACP (Aktions)
+	public function getViewItemLink() {
+		$ret = '<a href="' . WADOKU_ADMIN_URL . 'japaneseword.php?op=view&amp;japaneseword_id=' . $this->getVar('japaneseword_id', 'e') . '" title="' . _CO_JAPANESEWORD_VIEW . '"><img src="' . ICMS_IMAGES_SET_URL . '/actions/viewmag.png" /></a>';
+		return $ret;
+	}
+	
+	//detailpage ACP (go detailpage frontend)
+	function getPreviewItemLink() {
+		$ret = '<a href="' . WADOKU_URL . 'japaneseword.php?japaneseword_id=' . $this->getVar('japaneseword_id', 'e') . '" title="' . _CO_WADOKU_PREVIEW . '" target="_blank">' . $this->getVar('midashi_go_field') . '</a>';
+		return $ret;
+	}
+	
+	//detailpage for frontend
+	function getItemLink($onlyUrl = FALSE) {
+		$url = WADOKU_URL . 'japaneseword.php?japaneseword_id=' . $this -> getVar( 'japaneseword_id' );
+		if ($onlyUrl) return $url;
+		return '<a href="' . $url . '" title="' . $this -> getVar( 'midashi_go_field' ) . ' ">' . $this -> getVar( 'midashi_go_field' ) . '</a>';
+	}
 }
