@@ -113,4 +113,29 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		if ($onlyUrl) return $url;
 		return '<a href="' . $url . '" title="' . $this -> getVar( 'midashi_go_field' ) . ' ">' . $this -> getVar( 'midashi_go_field' ) . '</a>';
 	}
+	
+	//notifications
+	function sendWadokuNotification($case) {
+		$valid_case = array('new_vocabulary', 'vocabulary_modified');
+		if(in_array($case, $valid_case, TRUE)) {
+			$module = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
+			$mid = $module->getVar('mid');
+			$tags ['WADOKU_TITLE'] = $this->getVar('midashi_go_field');
+			$tags ['WADOKU_URL'] = $this->getItemLink(FALSE);
+			switch ($case) {
+				case 'new_vocabulary':
+					$category = 'global';
+					$file_id = $this->id();
+					$recipient = array();
+					break;
+	
+				case 'vocabulary_modified':
+					$category = 'global';
+					$file_id = $this->id();
+					$recipient = array();
+					break;
+			}
+			icms::handler('icms_data_notification')->triggerEvent($category, $file_id, $case, $tags, $recipient, $mid);
+		}
+	}
 }

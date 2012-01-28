@@ -85,24 +85,37 @@ class mod_wadoku_JapanesewordHandler extends icms_ipf_Handler {
 	public function updateComments($japaneseword_id, $total_num) {
 		$japanesewordObj = $this->get($japaneseword_id);
 		if ($japanesewordObj && !$japanesewordObj->isNew()) {
-		$japanesewordObj->setVar('japaneseword_comments', $total_num);
-		$this->insert($japanesewordObj, true);
-	}
+			$japanesewordObj->setVar('japaneseword_comments', $total_num);
+			$this->insert($japanesewordObj, true);
+		}
 	}
 	
 	
 	//counter
 	public function updateCounter($japaneseword_id) {
-	global $wadoku_isAdmin;
-	$japanesewordObj = $this->get($japaneseword_id);
-	if (!is_object($japanesewordObj)) return false;
+		global $wadoku_isAdmin;
+			$japanesewordObj = $this->get($japaneseword_id);
+		if (!is_object($japanesewordObj)) return false;
 	
-	if (isset($japanesewordObj->vars['counter']) && !is_object(icms::$user) || (!$wadoku_isAdmin )) {
-	$new_counter = $japanesewordObj->getVar('counter') + 1;
-				$sql = 'UPDATE ' . $this->table . ' SET counter=' . $new_counter
-	. ' WHERE ' . $this->keyName . '=' . $japanesewordObj->id();
-	$this->query($sql, null, true);
+		if (isset($japanesewordObj->vars['counter']) && !is_object(icms::$user) || (!$wadoku_isAdmin )) {
+			$new_counter = $japanesewordObj->getVar('counter') + 1;
+			$sql = 'UPDATE ' . $this->table . ' SET counter=' . $new_counter
+				. ' WHERE ' . $this->keyName . '=' . $japanesewordObj->id();
+			$this->query($sql, null, true);
+		}
+		return true;
 	}
-	return true;
+		
+	//notifications
+	protected function afterSave(&$obj) {
+		global $wadokuConfig;
+		if ($obj->updating_counter)
+		return true;
+		if ($obj->isNew()) {
+			$obj->sendWadokuNotification('new_vocabulary');
+		} else {
+			$obj->sendWadokuNotification('vocabulary_modified');
+		}
+		return TRUE;
 	}
 }
