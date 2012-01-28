@@ -47,13 +47,12 @@ function icms_module_update_wadoku($module) {
 }
 
 function icms_module_install_wadoku($module) {
-	global $xoopsDB;
 	
 	// insert some licenses so that it is ready for use on installation
 	$queries = array();
 	
 	// a generic tag to hold untagged content
-	$queries[] = "INSERT into " . $xoopsDB->prefix('wadoku_japaneseword') . " (`japaneseword_id`, `online_status`, `midashi_go_field`, `hiragana_field`, `romaji_field`, `transkription_field`, `translation_field`, `entry_tags_field`, `userid_field`, `word_date_field`, `admin_extra_field`, `counter`, `meta_keywords`, `meta_description`, `short_url`) values 
+	$queries[] = "INSERT into " . icms::$xoopsDB->prefix('wadoku_japaneseword') . " (`japaneseword_id`, `online_status`, `midashi_go_field`, `hiragana_field`, `romaji_field`, `transkription_field`, `translation_field`, `entry_tags_field`, `userid_field`, `word_date_field`, `admin_extra_field`, `counter`, `meta_keywords`, `meta_description`, `short_url`) values 
 	(1, 1, '和独', 'わどく', 'WaDoku', 'N.', '[1] Japanisch und Deutsch || (als adnominales Attribut) japanisch-deutsch (z.B. Wörterbuch) || Japan (n) und Deutschland (n). [2] japanisch-deutsches Wörterbuch n. => <Wadoku·jiten> (和独辞典)', '', 5, 1317395400, '', 0, 'わどく', '[1] Japanisch und Deutsch || (als adnominales Attribut) japanisch-deutsch (z.B. Wörterbuch) || Japan (n) und Deutschland (n). [2] japanisch-deutsches Wörterbuch n. => <Wadoku·jiten> (和独辞典)', '和独'),
 	(2, 1, '調べる', 'しらべる', 'shiraberu', '1‑st. trans. V. auf <‑e>', 'untersuchen; prüfen; erforschen; ermitteln; nachforschen; durchsehen; nachschlagen; verhören; zensieren.', '', 5, 1317395400, '', 0, 'しらべる', 'untersuchen; prüfen; erforschen; ermitteln; nachforschen; durchsehen; nachschlagen; verhören; zensieren.', '調べる'),
 	(3, 1, '払う', 'はらう', 'harau', '5‑st. trans. V. auf ‑[w]a mit Geminaten-Onbin = <‑tte>', '[1] bezahlen; zahlen; begleichen. [2] abwischen; abstauben; abfegen; wegfegen; wegbürsten; ausbürsten. [3] vertreiben; beschwören; besprechen.', '', 5, 1317870000, '', 0, 'はらう', '[1] bezahlen; zahlen; begleichen. [2] abwischen; abstauben; abfegen; wegfegen; wegbürsten; ausbürsten. [3] vertreiben; beschwören; besprechen.', '払う'),
@@ -81,7 +80,7 @@ function icms_module_install_wadoku($module) {
 	(25, 1, '景色', 'けしき', 'keshiki', 'N.', 'Aussicht f auf die Landschaft; Ausblick m auf die Landschaft; landschaftliches Panorama n; Landschaft f; landschaftliche Kulisse f; Szenerie f. fūkō 風光', '', 1, 1319170800, '', 0, 'けしき', 'Aussicht f auf die Landschaft; Ausblick m auf die Landschaft; landschaftliches Panorama n; Landschaft f; landschaftliche Kulisse f; Szenerie f. fūkō 風光', '景色');
 	";
 	foreach($queries as $query) {
-	$result = $xoopsDB->query($query);
+	$result = icms::$xoopsDB->query($query);
 	}
 	return TRUE;
 }
