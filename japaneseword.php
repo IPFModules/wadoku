@@ -49,6 +49,9 @@ if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$icmsTpl->assign("wadoku_japaneseword_table", $objectTable->fetch());
 }
 
+//counter
+$wadoku_japaneseword_handler->updateCounter($clean_japaneseword_id);
+
 $icmsTpl->assign("wadoku_module_home", '<a href="' . ICMS_URL . "/modules/" . icms::$module->getVar("dirname") . '/">' . icms::$module->getVar("name") . "</a>");
 
 include_once "footer.php";

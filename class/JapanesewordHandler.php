@@ -89,4 +89,20 @@ class mod_wadoku_JapanesewordHandler extends icms_ipf_Handler {
 		$this->insert($japanesewordObj, true);
 	}
 	}
+	
+	
+	//counter
+	public function updateCounter($japaneseword_id) {
+	global $wadoku_isAdmin;
+	$japanesewordObj = $this->get($japaneseword_id);
+	if (!is_object($japanesewordObj)) return false;
+	
+	if (isset($japanesewordObj->vars['counter']) && !is_object(icms::$user) || (!$wadoku_isAdmin )) {
+	$new_counter = $japanesewordObj->getVar('counter') + 1;
+				$sql = 'UPDATE ' . $this->table . ' SET counter=' . $new_counter
+	. ' WHERE ' . $this->keyName . '=' . $japanesewordObj->id();
+	$this->query($sql, null, true);
+	}
+	return true;
+	}
 }

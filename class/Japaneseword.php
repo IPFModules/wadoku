@@ -13,6 +13,10 @@
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 
 class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
+	
+	//counter
+	public $updating_counter = FALSE;
+	
 	/**
 	 * Constructor
 	 *
@@ -74,5 +78,20 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 			$button .= '<img src="'. ICMS_IMAGES_SET_URL . '/actions/button_ok.png" alt="' . _CO_WADOKU_JAPANESEWORD_ONLINE	. '" title="' . _CO_WADOKU_JAPANESEWORD_ONLINE . '" /></a>';
 		}
 		return $button;
+	}
+	
+	//counter
+	function getReads() {
+		return $this->getVar('counter');
+	}
+	
+	function setReads($qtde = null) {
+		$t = $this->getVar('counter');
+		if (isset($qtde)) {
+			$t += $qtde;
+		} else {
+			$t++;
+		}
+		$this->setVar('counter', $t);
 	}
 }
