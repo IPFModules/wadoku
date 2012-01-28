@@ -119,7 +119,7 @@ $modversion['notification']['category'][1] = array (
 	'description'		=> _MI_WADOKU_GLOBAL_NOTIFY_DSC,
 	'subscribe_from'	=> array('japaneseword.php')
 );
-$modversion['notification']['event'][1] = array(
+$modversion['notification']['event'][2] = array(
 	'name'				=> 'new_vocabulary',
 	'category'			=> 'global',
 	'title'				=> _MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY,
@@ -128,7 +128,7 @@ $modversion['notification']['event'][1] = array(
 	'mail_template'		=> 'new_vocabulary',  //create a mail template
 	'mail_subject'		=> _MI_WADOKU_GLOBAL_NEW_VOC_NOTIFY_SBJ
 );
-$modversion['notification']['event'][2] = array(
+$modversion['notification']['event'][3] = array(
 	'name'				=> 'vocabulary_modified',
 	'category'			=> 'global',
 	'title'				=> _MI_WADOKU_GLOBAL_VOC_NOTIFY,

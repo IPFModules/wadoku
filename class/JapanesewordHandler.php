@@ -108,13 +108,14 @@ class mod_wadoku_JapanesewordHandler extends icms_ipf_Handler {
 		
 	//notifications
 	protected function afterSave(&$obj) {
-		global $wadokuConfig;
 		if ($obj->updating_counter)
 		return true;
-		if ($obj->isNew()) {
-			$obj->sendWadokuNotification('new_vocabulary');
+		if ((!$obj->getVar("notification_sent", "e") || $obj->getVar("notification_sent", "e") == 0 ) && $obj->getVar("online_status", "e") == TRUE) {
+			$obj->sendNotifVocabularyPublished();
+			$obj->setVar("notification_sent", 1);
+			$this->insert($obj);
 		} else {
-			$obj->sendWadokuNotification('vocabulary_modified');
+			$obj->sendNotifVocabularyUpdated();
 		}
 		return TRUE;
 	}

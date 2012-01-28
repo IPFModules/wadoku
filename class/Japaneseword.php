@@ -38,8 +38,11 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		$this->quickInitVar("userid_field", XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 1);
 		$this->quickInitVar("word_date_field", XOBJ_DTYPE_LTIME, FALSE);
 		$this->quickInitVar("admin_extra_field", XOBJ_DTYPE_TXTAREA, FALSE);
+		$this->quickInitVar("notification_sent", XOBJ_DTYPE_INT, FALSE); 
 		$this->initCommonVar("counter");
 		$this->setControl("userid_field", "user");
+		
+		$this->hideFieldFromForm("notification_sent");
 		
 		$this->setControl('online_status', 'yesno');
 		$this->initiateSEO();
@@ -115,27 +118,17 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 	}
 	
 	//notifications
-	function sendWadokuNotification($case) {
-		$valid_case = array('new_vocabulary', 'vocabulary_modified');
-		if(in_array($case, $valid_case, TRUE)) {
-			$module = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
-			$mid = $module->getVar('mid');
-			$tags ['WADOKU_TITLE'] = $this->getVar('midashi_go_field');
-			$tags ['WADOKU_URL'] = $this->getItemLink(FALSE);
-			switch ($case) {
-				case 'new_vocabulary':
-					$category = 'global';
-					$file_id = $this->id();
-					$recipient = array();
-					break;
+	function sendNotifVocabularyPublished() {
+		$module = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
+		$tags ['WADOKU_TITLE'] = $this->getVar('midashi_go_field');
+		$tags ['WADOKU_URL'] = $this->getItemLink(false);
+		icms::handler('icms_data_notification')->triggerEvent('global', 0, 'new_vocabulary', $tags, array(), $module->getVar('mid'));
+	}
 	
-				case 'vocabulary_modified':
-					$category = 'global';
-					$file_id = $this->id();
-					$recipient = array();
-					break;
-			}
-			icms::handler('icms_data_notification')->triggerEvent($category, $file_id, $case, $tags, $recipient, $mid);
-		}
+	function sendNotifVocabularyUpdated() {
+		$module = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
+		$tags ['WADOKU_TITLE'] = $this->getVar('midashi_go_field');
+		$tags ['WADOKU_URL'] = $this->getItemLink(false);
+		icms::handler('icms_data_notification')->triggerEvent('global', 0, 'vocabulary_modified', $tags, array(), $module->getVar('mid'));
 	}
 }
