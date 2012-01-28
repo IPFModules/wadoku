@@ -25,6 +25,9 @@ $japanesewordObj = $wadoku_japaneseword_handler->get($clean_japaneseword_id);
 if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$icmsTpl->assign("wadoku_japaneseword", $japanesewordObj->toArray());
 	
+	//counter
+	$wadoku_japaneseword_handler->updateCounter($clean_japaneseword_id);
+	
 	//comments
 	if ($wadokuConfig['com_rule']) {
 		$icmsTpl->assign('wadoku_post_comment', TRUE);
@@ -51,9 +54,6 @@ if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$objectTable->setDefaultOrder('DESC');
 	$icmsTpl->assign("wadoku_japaneseword_table", $objectTable->fetch());
 }
-
-//counter
-$wadoku_japaneseword_handler->updateCounter($clean_japaneseword_id);
 
 $icmsTpl->assign("wadoku_module_home", '<a href="' . ICMS_URL . "/modules/" . icms::$module->getVar("dirname") . '/">' . icms::$module->getVar("name") . "</a>");
 
