@@ -25,6 +25,12 @@ $japanesewordObj = $wadoku_japaneseword_handler->get($clean_japaneseword_id);
 if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$icmsTpl->assign("wadoku_japaneseword", $japanesewordObj->toArray());
 	
+	//comments
+	if ($wadokuConfig['com_rule']) {
+		$icmsTpl->assign('wadoku_post_comment', TRUE);
+		include_once ICMS_ROOT_PATH . '/include/comment_view.php';
+	}
+	
 	$icms_metagen = new icms_ipf_Metagen($japanesewordObj->getVar("midashi_go_field"), $japanesewordObj->getVar("meta_keywords", "n"), $japanesewordObj->getVar("meta_description", "n"));
 	$icms_metagen->createMetaTags();
 } else {

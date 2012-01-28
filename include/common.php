@@ -20,3 +20,5 @@ if (!defined("WADOKU_ADMIN_URL")) define("WADOKU_ADMIN_URL", WADOKU_URL."admin/"
 
 // Include the common language file of the module
 icms_loadLanguageFile("wadoku", "common");
+
+$wadokuConfig = icms_getModuleConfig( WADOKU_DIRNAME );

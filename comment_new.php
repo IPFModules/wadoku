@@ -19,11 +19,12 @@ if ($com_itemid > 0) {
 	$japanesewordObj = $wadoku_japaneseword_handler->get($com_itemid);
 	
 	if ($japanesewordObj && !$japanesewordObj->isNew()) {
-		$bodytext = $japanesewordObj->getVar('midashi_go_field');
+		$bodytext = $japanesewordObj->getVar('translation_field');
+		$com_replytext = '';
 		if ($bodytext != '') {
 			$com_replytext .= $bodytext;
 		}
-		$com_replytitle = $japanesewordObj->getVar('japaneseword_id');
+		$com_replytitle = $japanesewordObj->getVar('midashi_go_field');
 		include_once ICMS_ROOT_PATH .'/include/comment_new.php';
 	}
 }
