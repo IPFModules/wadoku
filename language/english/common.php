@@ -23,8 +23,6 @@ define("_CO_WADOKU_JAPANESEWORD_TRANSKRIPTION_FIELD", "Transcription");
 define("_CO_WADOKU_JAPANESEWORD_TRANSKRIPTION_FIELD_DSC", "For example: '<b>5‑st. intrans. V. auf <‑ra>; mit regelm. Geminaten-Onbin = <‑tte></b>'");
 define("_CO_WADOKU_JAPANESEWORD_TRANSLATION_FIELD", "Translation");
 define("_CO_WADOKU_JAPANESEWORD_TRANSLATION_FIELD_DSC", "The Kanji in your language. If you have more than one meaning, use this for example: '<b>[1] Versprechen n; Abmachung f; Vertrag m; Bedingung f. [2] Verabredung f; Rendezvous n; Daten. [3] Konvention f; Statuten fpl. [4] Bestimmung f; vorbestimmtes Schicksal n.</b>'");
-define("_CO_WADOKU_JAPANESEWORD_ENTRY_TAGS_FIELD", "Tags");
-define("_CO_WADOKU_JAPANESEWORD_ENTRY_TAGS_FIELD_DSC", "Take the tags for a Kategorie, as subject matter, or simlar things.");
 define("_CO_WADOKU_JAPANESEWORD_DAIJIRIN_FIELD", "Daijirin");
 define("_CO_WADOKU_JAPANESEWORD_DAIJIRIN_FIELD_DSC", "Beschreibung zu daijirin");
 define("_CO_WADOKU_JAPANESEWORD_DAIJISEN_FIELD", "Daijisen");

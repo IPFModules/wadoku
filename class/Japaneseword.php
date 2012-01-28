@@ -32,9 +32,6 @@ class mod_wadoku_Japaneseword extends icms_ipf_seo_Object {
 		$this->quickInitVar("romaji_field", XOBJ_DTYPE_TXTBOX, FALSE);
 		$this->quickInitVar("transkription_field", XOBJ_DTYPE_TXTBOX, FALSE);
 		$this->quickInitVar("translation_field", XOBJ_DTYPE_TXTAREA, TRUE);
-		$this->quickInitVar("entry_tags_field", XOBJ_DTYPE_TXTBOX, FALSE);
-		//$this->quickInitVar("daijirin_field", XOBJ_DTYPE_TXTAREA, FALSE);
-		//$this->quickInitVar("daijisen_field", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->quickInitVar("userid_field", XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 1);
 		$this->quickInitVar("word_date_field", XOBJ_DTYPE_LTIME, FALSE);
 		$this->quickInitVar("admin_extra_field", XOBJ_DTYPE_TXTAREA, FALSE);
