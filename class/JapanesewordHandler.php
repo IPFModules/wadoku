@@ -54,47 +54,22 @@ class mod_wadoku_JapanesewordHandler extends icms_ipf_Handler {
 	}
 	
 	/**
-	* Toggles a japaneseword on or offline
-	*
-	* @param int $japaneseword_id
-	* @param str $field
-	* @return int $visibility
-	*/
-	public function changeOnlineStatus($japaneseword_id, $field) {
-	
-		$visibility = $japanesewordObj = '';
-	
-		$japanesewordObj = $this->get($japaneseword_id);
-		if ($japanesewordObj->getVar($field, 'e')) {
-			$japanesewordObj->setVar($field, 0);
-			$visibility = 0;
-		} else {
-			$japanesewordObj->setVar($field, 1);
-			$visibility = 1;
-		}
-		$this->insert($japanesewordObj, TRUE);
-	
-		return $visibility;
-	}
-	
-	
-	/**
 	* Switches an items status from online to offline or vice versa
 	*
 	* @return null
 	*/
 	public function changeVisible($japaneseword_id) {
-	$visibility = '';
-	$japanesewordObj = $this->get($japaneseword_id);
-	if ($japanesewordObj->getVar('online_status', 'e') == true) {
-	$japanesewordObj->setVar('online_status', 0);
-	$visibility = 0;
-	} else {
-	$japanesewordObj->setVar('online_status', 1);
-					$visibility = 1;
-	}
-	$this->insert($japanesewordObj, true);
-	return $visibility;
+		$visibility = '';
+		$japanesewordObj = $this->get($japaneseword_id);
+		if ($japanesewordObj->getVar('online_status', 'e') == true) {
+			$japanesewordObj->setVar('online_status', 0);
+			$visibility = 0;
+		} else {
+			$japanesewordObj->setVar('online_status', 1);
+			$visibility = 1;
+		}
+			$this->insert($japanesewordObj, true);
+		return $visibility;
 	
 	}
 	
@@ -108,9 +83,9 @@ class mod_wadoku_JapanesewordHandler extends icms_ipf_Handler {
 		}
 		
 	public function updateComments($japaneseword_id, $total_num) {
-	$japanesewordObj = $this->get($japaneseword_id);
-	if ($japanesewordObj && !$japanesewordObj->isNew()) {
-	$japanesewordObj->setVar('japaneseword_comments', $total_num);
+		$japanesewordObj = $this->get($japaneseword_id);
+		if ($japanesewordObj && !$japanesewordObj->isNew()) {
+		$japanesewordObj->setVar('japaneseword_comments', $total_num);
 		$this->insert($japanesewordObj, true);
 	}
 	}

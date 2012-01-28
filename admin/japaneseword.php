@@ -83,7 +83,7 @@ if (in_array($clean_op, $valid_op, TRUE)) {
 			
 		case "changeStatus":
 			$status = $ret = '';
-			$status = $wadoku_japaneseword_handler->changeOnlineStatus($clean_japaneseword_id, 'online_status');
+			$status = $wadoku_japaneseword_handler->changeVisible($clean_japaneseword_id);
 			$ret = '/modules/' . basename(dirname(dirname(__FILE__))) . '/admin/japaneseword.php';
 			if (!$status) {
 				redirect_header(ICMS_URL . $ret, 2, _AM_WADOKU_JAPANESEWORD_OFFLINE);
@@ -107,6 +107,7 @@ if (in_array($clean_op, $valid_op, TRUE)) {
 			$objectTable->addQuickSearch(array('midashi_go_field', 'hiragana_field', 'romaji_field', 'translation_field', 'entry_tags_field'));
 			$objectTable->setDefaultSort('japaneseword_id');
 			$objectTable->setDefaultOrder('DESC');
+			$objectTable->addFilter('online_status', 'online_status_filter');
 			$icmsAdminTpl->assign("wadoku_japaneseword_table", $objectTable->fetch());
 			$icmsAdminTpl->display("db:wadoku_admin_japaneseword.html");
 			break;
