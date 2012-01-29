@@ -12,8 +12,8 @@
 
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 
-define("_MI_WADOKU_MD_NAME", "wadoku");
-define("_MI_WADOKU_MD_DESC", "ImpressCMS Simple wadoku");
+define("_MI_WADOKU_MD_NAME", "WaDoku");
+define("_MI_WADOKU_MD_DESC", "ImpressCMS Simple WaDoku");
 
 define("_MI_WADOKU_JAPANESEWORDS", "WaDoku");
 define("_MI_WADOKU_MODULEHELPS", "Help");
@@ -36,5 +36,5 @@ define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_DSC", "Receive notification when any word m
 define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_SBJ", "[{X_SITENAME}] {X_MODULE} auto-notify : A new Japanese word was modified");
 
 //breadcrumbs
-define("_MI_WADOKU_SHOW_BREADCRUMBS", "show breadcrumb");
-define("_MI_WADOKU_SHOW_BREADCRUMBS_DSC", "choose 'YES' to show breadcrumb in frontend");
+define("_MI_WADOKU_SHOW_BREADCRUMBS", "Show breadcrumb");
+define("_MI_WADOKU_SHOW_BREADCRUMBS_DSC", "Choose 'YES' to show breadcrumb in front end");

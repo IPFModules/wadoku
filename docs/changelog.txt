@@ -4,12 +4,13 @@ Revision: 23299
 
 '''Added'''
 * #000 (addons): Notification with two options added (sato-san)
-* #000 (addons): comment function added (sato-san)
+* #000 (addons): Comment function added (sato-san)
+* #000 (addons): Breadcrumbs function added (sato-san)
 
 '''Fixed'''
-* #000 (addons): link from the module ACP to the front end fixed (sato-san)
-* #000 (addons): preview within the module administration fixed (sato-san)
-* #000 (addons): view-counter fixed (sato-san)
+* #000 (addons): Link from the module ACP to the front end fixed (sato-san)
+* #000 (addons): Preview within the module administration fixed (sato-san)
+* #000 (addons): View-counter fixed (sato-san)
 * #000 (addons): Filter in the module administration fixed (sato-san)
 * #000 (addons): Status for Offline and Online fixed (sato-san)
 
@@ -20,15 +21,15 @@ Revision: 00000
 
 '''Added'''
 * #000 (addons): QuickSearch for ACP and front end added (sato-san)
-* #000 (addons): table columns for Hiragana/Katakana and Romaji added (sato-san)
-* #000 (addons): globle search function (Madfish + sato-san)
-* #000 (addons): new module icons (sato-san)
-* #000 (addons): shows the ID of words in the module (sato-san)
-* #000 (addons): word examples after the first installation availeble (sato-san)
-* #000 (addons): a new block to show a word randomly (sato-san)
-* #000 (addons): set a word online/offline in the ACP (sato-san)
-* #000 (addons): link for templates in the ACP added (sato-san)
-* #000 (addons): extended admin infos for the front end added (sato-san)
+* #000 (addons): Table columns for Hiragana/Katakana and Romaji added (sato-san)
+* #000 (addons): Globle search function (Madfish + sato-san)
+* #000 (addons): New module icons (sato-san)
+* #000 (addons): Shows the ID of words in the module (sato-san)
+* #000 (addons): Word examples after the first installation availeble (sato-san)
+* #000 (addons): A new block to show a word randomly (sato-san)
+* #000 (addons): Set a word online/offline in the ACP (sato-san)
+* #000 (addons): Link for templates in the ACP added (sato-san)
+* #000 (addons): Extended admin infos for the front end added (sato-san)
 * #000 (addons): META keywords and META description added (sato-san)
 
 === wadoku 1.0 Beta ===
