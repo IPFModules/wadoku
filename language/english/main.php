@@ -12,7 +12,7 @@
 
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 
-define("_MD_WADOKU_ADMIN_PAGE", ":: Admin page ::");
+define("_MD_WADOKU_ADMIN_PAGE", ".:: Module Administration ::.");
 
 define("_MD_WADOKU_ALL_JAPANESEWORDS", "WaDoku: Japanese words");
 define("_MD_WADOKU_ALL_MODULEHELPS", "Module helps");
