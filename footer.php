@@ -12,8 +12,13 @@
 
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 
+//breadcrumbs
+if($wadokuConfig['show_breadcrumbs'] == 1) {
+	$icmsTpl->assign('wadoku_show_breadcrumb', TRUE);
+}
+
 $icmsTpl->assign("wadoku_adminpage", "<a href='" . ICMS_URL . "/modules/" . icms::$module->getVar("dirname") . "/admin/index.php'>" ._MD_WADOKU_ADMIN_PAGE . "</a>");
-$icmsTpl->assign("wadoku_is_admin", icms_userIsAdmin(WADOKU_DIRNAME));
+$icmsTpl->assign("wadoku_isAdmin", icms_userIsAdmin(WADOKU_DIRNAME));
 $icmsTpl->assign('wadoku_url', WADOKU_URL);
 $icmsTpl->assign('wadoku_images_url', WADOKU_IMAGES_URL);
 

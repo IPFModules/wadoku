@@ -1,1 +1,15 @@
-<div id="wadoku_submit" style="clear: both;"><{if $wadoku_showSubmitLink && $wadoku_userCanSubmit}><a href="<{$wadoku_url}>post.php?op=mod"><{$smarty.const._MI_WADOKU_POST_ADD}></a><{/if}></div>
+<{if $wadoku_show_breadcrumb}>
+	<!-- module breadcrumb -->
+	<div class="wadoku_headertable">
+		<{if $wadoku_module_home}><span class="wadoku_modulename"><{$wadoku_module_home}></span><{/if}>
+		<{if $wadoku_cat_path}>
+			<span class="wadoku_breadcrumb">
+				<{if $wadoku_module_home}>&nbsp;:&nbsp;<{/if}><{$wadoku_cat_path}>
+			</span>
+		<{/if}>
+	</div>
+<{/if}>
+
+<div id="wadoku_submit" style="clear: both;">
+	<{if $wadoku_showSubmitLink && $wadoku_userCanSubmit}><a href="<{$wadoku_url}>post.php?op=mod"><{$smarty.const._MI_WADOKU_POST_ADD}></a><{/if}>
+</div>

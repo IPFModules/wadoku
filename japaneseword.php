@@ -42,7 +42,7 @@ if($japanesewordObj && !$japanesewordObj->isNew()) {
 	$objectTable = new icms_ipf_view_Table($wadoku_japaneseword_handler, FALSE, array());
 	$objectTable->isForUserSide();
 	
-	//Feld als preview defieren
+	//field as preview
 	$objectTable->addColumn(new icms_ipf_view_Column("midashi_go_field", "center", "80", 'getItemLink'));
 	
 	$objectTable->addColumn(new icms_ipf_view_Column("hiragana_field", "center", "80"));
@@ -55,5 +55,12 @@ if($japanesewordObj && !$japanesewordObj->isNew()) {
 }
 
 $icmsTpl->assign("wadoku_module_home", '<a href="' . ICMS_URL . "/modules/" . icms::$module->getVar("dirname") . '/">' . icms::$module->getVar("name") . "</a>");
+
+//breadcrumbs
+if( $wadokuConfig['show_breadcrumbs'] == true ) {
+	$icmsTpl->assign('wadoku_show_breadcrumb', true);
+} else {
+	$icmsTpl->assign('wadoku_show_breadcrumb', false);
+}
 
 include_once "footer.php";

@@ -105,10 +105,20 @@ $modversion['blocks'][1] = array(
 	"template"					=> "wadoku_random_wadoku.html");
 
 /** Preferences information */
-/** To come soon in imBuilding... */
+global $icmsConfig;
+
+$i=0;
+$i++;
+$modversion['config'][$i] = array(
+								'name' 			=> 'show_breadcrumbs',
+								'title' 		=> '_MI_WADOKU_SHOW_BREADCRUMBS',
+								'description' 	=> '_MI_WADOKU_SHOW_BREADCRUMBS_DSC',
+								'formtype' 		=> 'yesno',
+								'valuetype' 	=> 'int',
+								'default' 		=>  1
+							);
 
 /** Notification information */
-
 $modversion['hasNotification'] = 1;
 $modversion['notification']['lookup_file'] = 'include/notification.inc.php';
 $modversion['notification']['lookup_func'] = 'wadoku_notify_iteminfo';

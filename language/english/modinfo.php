@@ -34,3 +34,7 @@ define("_MI_WADOKU_GLOBAL_VOC_NOTIFY", "Word modifications");
 define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_CAP", "Notify me of any word modifications.");
 define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_DSC", "Receive notification when any word modification is submitted.");
 define("_MI_WADOKU_GLOBAL_VOC_NOTIFY_SBJ", "[{X_SITENAME}] {X_MODULE} auto-notify : A new Japanese word was modified");
+
+//breadcrumbs
+define("_MI_WADOKU_SHOW_BREADCRUMBS", "show breadcrumb");
+define("_MI_WADOKU_SHOW_BREADCRUMBS_DSC", "choose 'YES' to show breadcrumb in frontend");
